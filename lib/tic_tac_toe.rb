@@ -110,7 +110,6 @@ def play
     turn
   end
 
-
 if won?
   puts "Congratulations #{winner}!"
 else
@@ -118,4 +117,3 @@ else
   end 
 end
 
-end
