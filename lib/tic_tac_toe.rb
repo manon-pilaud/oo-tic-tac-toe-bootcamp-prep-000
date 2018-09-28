@@ -84,8 +84,8 @@ def won?
     @board.none?{|i| i == " "}
 end
 
-def draw?(board)
-  full?(board) && !won?(board)
+def draw?
+  full? && !won?(board)
 end
 
 def over?(board)
