@@ -85,19 +85,19 @@ def won?
 end
 
 def draw?
-  full? && !won?(board)
+  full? && !won?
 end
 
-def over?(board)
-  won?(board) || full?(board) || draw?(board)
+def over?
+  won?|| full?|| draw?
 end
 
-def winner(board)
+def winner
   WIN_COMBINATIONS.each do |win_combination|
-  if (board[win_combination[0]]) == "X" && (board[win_combination[1]]) == "X" && (board[win_combination[2]]) == "X" 
+  if (@board[win_combination[0]]) == "X" && (@board[win_combination[1]]) == "X" && (@board[win_combination[2]]) == "X" 
   return 'X'
     
-  elsif (board[win_combination[0]]) == "O" && (board[win_combination[1]]) == "O" && (board[win_combination[2]]) == "O"
+  elsif (@board[win_combination[0]]) == "O" && (@board[win_combination[1]]) == "O" && (@board[win_combination[2]]) == "O"
   return 'O'
  
     end
@@ -105,13 +105,13 @@ def winner(board)
   nil
 end
 
-def play(board)
-  until over?(board) 
-    turn(board)
+def play
+  until over?
+    turn
   end
 end
 
-if won?(board)
+if won?
   puts "Congratulations #{winner(board)}!"
 else
   puts "Cat's Game"
